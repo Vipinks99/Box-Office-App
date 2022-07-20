@@ -17,13 +17,14 @@ export const SearchCard = styled.div`
     height: 420px;
     overflow: hidden;
     border: 1px solid #ddd;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
 
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
   h1 {
     margin: 10px 0;
     font-size: 21px;
@@ -38,7 +39,7 @@ export const Star = styled.div`
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: #ffc806;
+  background-color: ${props => (props.active ? '#ffc806' : '#ddd')};
   clip-path: polygon(
     50% 0%,
     61% 35%,

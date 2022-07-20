@@ -1,14 +1,15 @@
-import { act } from '@testing-library/react';
-import { useEffect, useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 
 function showsReducer(prevState, action) {
   switch (action.type) {
     case 'ADD': {
-      return [...prevState, action, showId];
+      return [...prevState, action.showId];
     }
+
     case 'REMOVE': {
       return prevState.filter(showId => showId !== action.showId);
     }
+
     default:
       return prevState;
   }
